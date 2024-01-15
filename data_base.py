@@ -32,7 +32,7 @@ def save_images(folder_path, person_name):
     # Inicialización de la captura de video
     cap = cv2.VideoCapture(0) #, cv2.CAP_DSHOW
     # Carga del clasificador de rostros
-    face_classif = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
+    face_classif = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
     # Inicialización del contador
     count = 0
     
