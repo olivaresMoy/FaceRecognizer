@@ -29,7 +29,7 @@ def face_recognizer(folderPath):
     # Inicializa la captura de video desde la cámara
     cap = cv2.VideoCapture(0)  # También se puede utilizar cv2.CAP_DSHOW en Windows
     # Crea un objeto de clasificador de rostros utilizando el archivo haarcascade_frontalface_default.xml
-    faceClassif = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
+    faceClassif = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
     # Bucle para capturar y procesar continuamente imágenes desde la cámara
     while True:

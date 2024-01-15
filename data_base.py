@@ -71,7 +71,7 @@ def save_images(folder_path, person_name):
         
         # Salir si se presiona la tecla escape o se alcanza el límite de imágenes
         k = cv2.waitKey(1)
-        if k == 27 or count >= 500:
+        if k == 27 or count >= 200:
             break
     
     # Liberar la captura de video
