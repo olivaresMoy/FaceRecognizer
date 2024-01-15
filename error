@@ -1,0 +1,26 @@
+
+# Configuración de la interfaz de reconocimiento facial
+ventana_reconocimiento = tk.Tk()
+ventana_reconocimiento.geometry("866x768+200+10")
+ventana_reconocimiento.title("Reconocimiento Facial")
+ventana_reconocimiento.resizable(width=False, height=False)
+
+# Carga de la imagen de fondo en la interfaz
+fondo = tk.PhotoImage(file="registro.png")
+fondo1 = tk.Label(ventana_reconocimiento, image=fondo).place(x=0, y=0, relheight=1, relwidth=1)
+
+
+# Función para actualizar la interfaz de video
+def Iniciar():
+    frame = imutils.resize(frame, width=635)
+    frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+    img = Image.fromarray(frame)
+    image = ImageTk.PhotoImage(image=img)
+    lbVideo.configure(image=image)
+    lbVideo.image = image
+    lbVideo.after(10, Iniciar)
+
+# Configuración del área de visualización de video en la interfaz
+lbVideo = tk.Label(ventana_reconocimiento, bg="black")
+lbVideo.place(x=80, y=104)
+
