@@ -8,6 +8,7 @@ Created on Wed Dec  6 12:39:44 2023
 """
 import cv2
 import os
+import imutils
 
 def face_recognizer(folderPath):
     """
@@ -28,6 +29,8 @@ def face_recognizer(folderPath):
 
     # Inicializa la captura de video desde la cámara
     cap = cv2.VideoCapture(0)  # También se puede utilizar cv2.CAP_DSHOW en Windows
+    # redimensionar
+    cap = imutils.resize(cap, width=866)
     # Crea un objeto de clasificador de rostros utilizando el archivo haarcascade_frontalface_default.xml
     faceClassif = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
