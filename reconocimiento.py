@@ -29,8 +29,6 @@ def face_recognizer(folderPath):
 
     # Inicializa la captura de video desde la cámara
     cap = cv2.VideoCapture(0)  # También se puede utilizar cv2.CAP_DSHOW en Windows
-    # redimensionar
-    cap = imutils.resize(cap, width=866)
     # Crea un objeto de clasificador de rostros utilizando el archivo haarcascade_frontalface_default.xml
     faceClassif = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
@@ -38,6 +36,9 @@ def face_recognizer(folderPath):
     while True:
         # Captura un fotograma desde la cámara
         ret, frame = cap.read()
+
+        # Redimensionar
+        frame = imutils.resize(frame, width=866)
 
         # Sale del bucle si la captura no fue exitosa
         if ret == False:
